@@ -1,4 +1,4 @@
-<div class="sr-scrollspy mb-5">
+<!--<div class="sr-scrollspy mb-5">
     <nav id="navbar-example2" class="navbar navbar-light bg-light px-3">
         <h3>IDENTIDAD DE LA MARCA SUNRISE MULTISERVICES LLC</h3>
         <ul class="nav nav-pills">
@@ -10,7 +10,7 @@
             </li>
             <li  class="nav-item">
                 <a [ngClass]="{'active': (selectedElementName === 'valores')}" class="nav-link clickable" (click)="scrollTo(scrollspyHeading3, 'valores')">Valores</a>
-            </li>
+            </li>-->
             <!--<li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle clickable" data-bs-toggle="dropdown" role="button"
                     aria-expanded="false" click()>Ver mas</a>
@@ -23,9 +23,9 @@
                     <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
                 </ul>
             </li>-->
-        </ul>
-    </nav>
-    <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="sr-scrollspy-content mt-5"
+        <!--</ul>
+    </nav>-->
+   <!--<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="sr-scrollspy-content mt-5"
         tabindex="0">
         <h4 #scrollspyHeading1>Misión</h4>
         <p>Servir a la comunidad de inmigrantes para que puedan vivir y trabajar
@@ -46,5 +46,75 @@
             nuestros clientes.</li>
         </ul>
     </div>
+</div>-->
+<div class="bg-light rounded py-3 mt-5 text-dark">
+    <h3 class="mb-3  text-center">IDENTIDAD DE LA MARCA SUNRISE MULTISERVICES LLC.</h3>
 </div>
+
+<div class=" my-5 accordion" id="accordionPanelsStayOpenExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+            <button style="width: 100%;" class="btn accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                aria-controls="panelsStayOpen-collapseOne">
+                <h2>Misión</h2>
+            </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+            aria-labelledby="panelsStayOpen-headingOne">
+            <div class="accordion-body p-5">
+                <i class="bi bi-caret-right-fill me-1"></i>
+                Servir a la comunidad de inmigrantes para que puedan vivir y trabajar
+                libremente en Estados Unidos junto a sus seres queridos.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true"
+                aria-controls="panelsStayOpen-collapseTwo">
+                <h2>Visión</h2>
+            </button>
+        </h2>
+        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show"
+            aria-labelledby="panelsStayOpen-headingTwo">
+            <div class="accordion-body p-5">
+                <i class="bi bi-caret-right-fill me-1"></i>
+                Ser una empresa líder en el área de preparación de documentos de
+                inmigración, ofreciendo un servicio de excelencia y calidad a nuestros
+                clientes.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseThree">
+                <h2>Valores</h2>
+            </button>
+        </h2>
+        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show"
+            aria-labelledby="panelsStayOpen-headingThree">
+            <div class="accordion-body">
+                <ul class="list-group">
+                    <li class="mb-3 list-group-item"><span class="fw-bold">Cristianos:</span> somos una empresa familiar fundada bajo principios
+                        bíblicos cristianos.</li>
+                    <li class="mb-3 list-group-item"><span class="fw-bold">Integridad:</span> nos manejamos con honestidad, apegados a nuestros
+                        valores cristianos y morales.</li>
+                    <li class="mb-3 list-group-item"><span class="fw-bold">Orientación al cliente:</span> estamos comprometidos con brindar
+                        servicios de excelencia a nuestros clientes.</li>
+                    <li class="mb-3 list-group-item"><span class="fw-bold">Respeto:</span> somos respetuosos con la información suministrada por
+                        nuestros clientes.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 
