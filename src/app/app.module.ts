@@ -10,6 +10,7 @@ import { ServicesComponent } from './components/services/services.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,11 +25,13 @@ import { RouterModule } from '@angular/router';
   imports: [
   BrowserModule,
   AppRoutingModule,
+  ReactiveFormsModule,
+  FormsModule,
   RouterModule.forRoot([
     { path: '', component: HomeComponent },
     { path: 'servicios', component: ServicesComponent },
     { path: 'sobre-nosotros', component: AboutComponent },
-    { path: 'contactos', component: ContactsComponent }
+    { path: 'contacto', component: ContactsComponent }
   ])
   ],
   providers: [],
