@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ContactService } from './contact.service';
 
 @Component({
   selector: 'app-contacts',
@@ -8,12 +9,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactsComponent {
   form = new FormGroup({
-    name: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.email),
+    senderName: new FormControl('', Validators.required),
+    senderEmail: new FormControl('', Validators.email),
     message: new FormControl('', Validators.required)
   });
 
-  constructor() {
+  constructor(private contactService: ContactService) {
 
   }
   get name() {
@@ -27,8 +28,8 @@ export class ContactsComponent {
     return this.form.get('message');
   }
 
-  save(formValue: any) {
-    console.log(formValue);
+  save(formValue: {[key: string]: string | null}) {
+    this.contactService.saveMessage(formValue).subscribe((resp: any)=> console.log(resp));
     this.form.reset();
   }
 }

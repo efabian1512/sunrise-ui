@@ -8,7 +8,10 @@
             <span class="mb-3" style="display: block;"><i class="bi bi-geo-alt-fill me-4"></i>This is my address.</span>
             <span class="mb-3" style="display: block;"><i class="bi bi-telephone-fill me-4"></i>(809) 693-0879</span>
             <span class="mb-3" style="display: block;"><i class="bi bi-envelope-fill me-4"></i>edwin.fabian.mosquea@gmail.com</span>
-            <span><i title="Facebook" class="bi bi-facebook me-3"></i> <i title="Instagram" class="bi bi-instagram me-3"></i><i title="Twitter" class="bi bi-twitter-x me-3"></i> <i title="Linkedin " class="bi bi-linkedin me-3"></i></span>
+            <a title="Facebook" href="https://www.facebook.com/ElApoostol?locale=es_LA" target="_blank"><i class="bi bi-facebook me-3"></i></a>
+            <a title="Instgram" href="https://www.instagram.com/edwinffabian/" target="_blank"><i class="bi bi-instagram me-3"></i></a>
+            <a title="Twiter" href="https://twitter.com/edin526" target="_blank"><i class="bi bi-twitter-x me-3"></i></a>
+            <a title="Linkedin" href="https://www.linkedin.com/in/edwin-fabian-bb93bab9/" target="_blank"><i class="bi bi-linkedin me-3"></i></a>
         </div>
     </div>
     <div class="col-md-6 col-sm-6 col-lg-6 ps-5">
@@ -17,10 +20,10 @@
         </div>
         <form [formGroup]="form" (ngSubmit)="save(form.value)">
             <div class="form-gropup mb-2">
-                <input placeholder="Nombre:" formControlName="name" type="text" id="name" class="form-control">
+                <input placeholder="Nombre:" formControlName="senderName" type="text" id="name" class="form-control">
             </div>
             <div class="form-gropup mb-2">
-                <input placeholder="Correo electronico:" formControlName="email" type="text" id="email" class="form-control">
+                <input placeholder="Correo electronico:" formControlName="senderEmail" type="text" id="email" class="form-control">
             </div>
             <div class="form-gropup mb-2">
                 <textarea placeholder="Tu mensaje:" class="form-control" formControlName="message" id="message" cols="30" rows="10"></textarea>

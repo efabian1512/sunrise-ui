@@ -11,6 +11,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   AppRoutingModule,
   ReactiveFormsModule,
   FormsModule,
+  HttpClientModule,
   RouterModule.forRoot([
     { path: '', component: HomeComponent },
     { path: 'servicios', component: ServicesComponent },

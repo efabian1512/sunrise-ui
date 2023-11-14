@@ -4,3 +4,12 @@
    /* border-color: rgb(248,249,250);*/
     color: black;
 }
+
+
+a {
+    color: black;
+}
+
+a i {
+    cursor: pointer;
+}
