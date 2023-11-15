@@ -10,7 +10,8 @@ import { ContactService } from './contact.service';
 export class ContactsComponent {
   form = new FormGroup({
     senderName: new FormControl('', Validators.required),
-    senderEmail: new FormControl('', Validators.email),
+    senderEmail: new FormControl('', [Validators.email, Validators.required]),
+    senderPhone: new FormControl(),
     message: new FormControl('', Validators.required)
   });
 
@@ -18,13 +19,16 @@ export class ContactsComponent {
 
   }
   get name() {
-    return this.form.get('name');
+    return this.form.get('senderName');
   }
 
   get email() {
-    return this.form.get('email');
+    return this.form.get('senderEmail');
   }
-  get address() {
+  get phone() {
+    return this.form.get('senderPhone');
+  }
+  get message() {
     return this.form.get('message');
   }
 
