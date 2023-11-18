@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SERVICES } from 'src/app/constants/services';
 
 @Component({
   selector: 'app-services',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./services.component.css']
 })
 export class ServicesComponent {
+
+  services: { [key: string]: string }[] = SERVICES;
+
+  constructor() {}
 
 }
