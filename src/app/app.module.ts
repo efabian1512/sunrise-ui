@@ -12,6 +12,7 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     ServicesComponent,
     AboutComponent,
     ContactsComponent,
+    CarouselComponent,
   ],
   imports: [
   BrowserModule,
@@ -30,11 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
   FormsModule,
   HttpClientModule,
   RouterModule.forRoot([
-    { path: '', component: HomeComponent },
-    { path: 'servicios', component: ServicesComponent },
-    { path: 'sobre-nosotros', component: AboutComponent },
-    { path: 'contacto', component: ContactsComponent }
-  ])
+    { path: '', component: HomeComponent }
+  ], { scrollPositionRestoration: "enabled" })
   ],
   providers: [],
   bootstrap: [AppComponent]

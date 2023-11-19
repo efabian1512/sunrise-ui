@@ -1,10 +1,12 @@
 
+    <nav-bar #navBar (scroll)="scrollTo($event)"></nav-bar>
+    <!--<banner #banner></banner>-->
+    <carousel [images]="images" [autoSlide]="false"></carousel>
+    
  
-    <banner></banner>
-    <nav-bar></nav-bar>
+
+    <!--<home #home></home>-->
+    <router-outlet #routerOutlet></router-outlet>
  
-  <div class="container">
-    <router-outlet></router-outlet>
-  </div>
 
 

@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { AboutComponent } from '../about/about.component';
+import { ServicesComponent } from '../services/services.component';
+import { ContactsComponent } from '../contacts/contacts.component';
 
 @Component({
   selector: 'home',
@@ -6,5 +9,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
 }

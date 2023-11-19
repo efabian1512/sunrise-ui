@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ContactService } from './contact.service';
 
 @Component({
-  selector: 'app-contacts',
+  selector: 'contacts',
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.css']
 })
@@ -15,7 +15,9 @@ export class ContactsComponent {
     message: new FormControl('', Validators.required)
   });
 
-  constructor(private contactService: ContactService) {
+
+
+  constructor(private contactService: ContactService, private el: ElementRef) {
 
   }
   get name() {
@@ -35,5 +37,9 @@ export class ContactsComponent {
   save(formValue: {[key: string]: string | null}) {
     this.contactService.saveMessage(formValue).subscribe((resp: any)=> console.log(resp));
     this.form.reset();
+  }
+  
+  scrollIntoView() {
+    this.el.nativeElement.scrollIntoView(false);
   }
 }

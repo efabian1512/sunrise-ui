@@ -1,16 +1,22 @@
-import { Component} from '@angular/core';
+import { Component, ElementRef} from '@angular/core';
 
 @Component({
-  selector: 'app-about',
+  selector: 'about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
 
-  selectedElementName: string = 'mision';
+ 
+
+  constructor(private el: ElementRef) {
+
+  }
+  scrollIntoView() {
+    this.el.nativeElement.scrollIntoView(false);
+  }
 
   scrollTo(ele: any, selectedElementName: string) {
-    this.selectedElementName= selectedElementName;
-    ele.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'start'});
+    ele.scrollIntoView(false, {behavior: 'smooth', block: 'start', inline: 'start'});
   }
 }

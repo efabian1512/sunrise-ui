@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'nav-bar',
@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class NavBarComponent {
 
+  @Output() scroll: EventEmitter<string> = new EventEmitter<string>();
+  selectedElementName: string = 'home';
+
+  scrollTo(componentName: string) {
+    this.selectedElementName = componentName;
+    this.scroll.emit(componentName);
+  }
+
+  setHomeAsActiveItem() {
+    this.selectedElementName = 'home';
+  }
 }

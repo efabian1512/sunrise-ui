@@ -1,23 +1,31 @@
-<div class="px-4 py-5" id="icon-grid">
-    <h2 class="pb-2 fw-bold border-bottom">Nuestros Servicios</h2>
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
-        <div *ngFor="let service of services"  class="col d-flex align-items-start">
-            
-            <a style="width: 100%;" class="services-anchor" routerLink="/">
-               <div class="text-center mt-2">
-                    <i [class]="service?.['icon']" class="bi me-3 icon-color h1"></i>
-                    <h5 class="fw-bold mt-2 mb-0">{{service?.['name']}}</h5>
-               </div>
-                  
-            </a>
-            
+<div class="row p-5 bg-dark">
+    <div class="pb-5 mt-3 col-md col-lg col-sm text-light">
+        <h1>Nuestros Servicios</h1>
+        <p>Haga click sobre el servicio para el que desea realizar solicitud.</p>
+    </div>
+    
+    <div class="col-md-8 col-lg-8 col-sm-8 px-5 pb-5">
+        <div class="px-4 px-5 pb-5 pt-3 services-wrapper" id="icon-grid">
+            <!--<h2 style="width: 100%;" class="pb-2 fw-bold border-bottom"></h2>-->
+        
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+                <div *ngFor="let service of services" class="col d-flex align-items-start">
+        
+                    <a style="width: 100%;" class="services-anchor" routerLink="/">
+                        <div class="text-center mt-2">
+                            <i [class]="service?.['icon']" class="bi me-3 icon-color h1"></i>
+                            <h5 class="fw-bold mt-2 mb-0">{{service?.['name']}}</h5>
+                        </div>
+        
+                    </a>
+        
+                </div>
+            </div>
         </div>
     </div>
-    <h2 class=" pb-5 pb-2 border-bottom"></h2>
-    <div class="col">
-        <a routerLink="/">Crear solicitud</a>
-    </div>
 </div>
+
+
 
 
