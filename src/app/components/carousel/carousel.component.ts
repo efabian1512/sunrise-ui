@@ -4,7 +4,7 @@ import { CarouselImage } from 'src/app/types/carousel-image';
 @Component({
   selector: 'carousel',
   templateUrl: './carousel.component.html',
-  styleUrls: ['./carousel.component.css']
+  styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent implements OnInit {
 
@@ -19,6 +19,11 @@ export class CarouselComponent implements OnInit {
     if(this.autoSlide) {
       this.autoSlideImages();
     }
+
+    this.images.map((image: CarouselImage, index: number) => {
+      image.id = index;
+      image.marginLeft = 0;
+    });
   }
 
   autoSlideImages(): void {
@@ -29,21 +34,59 @@ export class CarouselComponent implements OnInit {
 
   selectImage(index: number): void {
     this.selectedIndex = index;
+    const firstItem = this.images.find((image: CarouselImage) => image.id === 0);
+
+    if (firstItem) {
+      firstItem.marginLeft = -100 * index;
+    }
   }
 
   onPreviousClick(): void {
-    if(this.selectedIndex === 0) {
-      this.selectedIndex = this.images.length - 1;
+    let finalPercentage = 0;
+    let previousPosition =  this.selectedIndex - 1;
+
+    if (previousPosition >= 0) {
+      finalPercentage = -100 * previousPosition;
     } else {
-      this.selectedIndex--;
+      previousPosition = this.images.length - 1;
+      finalPercentage = -100 * previousPosition;
     }
+
+    const firstItem = this.images.find((image: CarouselImage) => image.id === 0);
+
+    if (firstItem) {
+      firstItem.marginLeft = finalPercentage;
+    }
+
+    this.selectedIndex = previousPosition;
+    // if(this.selectedIndex === 0) {
+    //   this.selectedIndex = this.images.length - 1;
+    // } else {
+    //   this.selectedIndex--;
+    // }
   }
 
   onNextClick(): void {
-    if(this.selectedIndex === this.images.length -1) {
-      this.selectedIndex = 0;
+    let finalPercentage = 0;
+    let nextPosition = this.selectedIndex + 1;
+
+    if(nextPosition <= this.images.length - 1) {
+      finalPercentage = -100 * nextPosition;
     } else {
-      this.selectedIndex ++;
+      nextPosition = 0;
     }
+
+    const firstItem = this.images.find((image: CarouselImage) => image.id === 0);
+
+    if (firstItem) {
+      firstItem.marginLeft = finalPercentage;
+    }
+
+    this.selectedIndex = nextPosition;
+    // if(this.selectedIndex === this.images.length -1) {
+    //   this.selectedIndex = 0;
+    // } else {
+    //   this.selectedIndex ++;
+    // }
   }
 }

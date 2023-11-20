@@ -1,31 +1,33 @@
-<div style="width: 100%; height: 60vh;" id="sunriseCarousel" class="carousel slide" data-bs-ride="carousel">
+<!--<div style="width: 100%; height: 60vh;" id="sunriseCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button class="dot" *ngFor="let indicator of images; index as i" (click)="selectImage(i)" type="button" [ngClass]="{'active': selectedIndex === i}">
-        </button>
+        </button>-->
         
         <!--<button class="indicator-button" *ngFor="let indicator of images; index as i" (click)="selectImage(i)" type="button"
          [ngClass]="{'active': selectedIndex === i}"></button>-->
-    </div>
+    <!--</div>
     <div class="carousel-inner">
-        <div *ngFor="let image of images;index as i" [ngClass]="{'active': selectedIndex === i }" class="carousel-item"
-            style="height: 60vh;">
-            <img [src]="image.imageSrc" alt="image.imageAlt" style="width: 100%; height: 60vh;">
-            <!--<div class="container">
-                <div class="carousel-caption text-dark text-start">
-                    <h1>Example headline.</h1>
-                    <p>Some representative placeholder content for the first slide of the carousel.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-                </div>
-            </div>-->
-        </div>
+        <ng-container *ngFor="let image of images;index as i" >
+            <div [ngClass]="{'active': selectedIndex === i }" class="carousel-item" style="height: 60vh;">
+                <img [src]="image.imageSrc" alt="image.imageAlt" [ngStyle]="{'margin-left': image.marginLeft + '%'}"  style="width: 100%; height: 60vh;">-->
+                <!--<div class="container">
+                            <div class="carousel-caption text-dark text-start">
+                                <h1>Example headline.</h1>
+                                <p>Some representative placeholder content for the first slide of the carousel.</p>
+                                <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                            </div>
+                        </div>-->
+            <!--</div>
+        </ng-container>
+        
     </div>
     <button (click)="onPreviousClick()" class="carousel-control-prev" type="button" data-bs-target="#sunriseCarousel" data-bs-slide="prev">
         <div class="button-size">
             <i class="bi bi-chevron-left text-dark"></i>
-        </div>
+        </div>-->
         
         <!--<span class="carousel-control-prev-icon"></span>-->
-        <span class="visually-hidden">Previous</span>
+        <!--<span class="visually-hidden">Previous</span>
     </button>
     <button (click)="onNextClick()" class="carousel-control-next" type="button" data-bs-target="#sunriseCarousel" data-bs-slide="next">
         <div class="button-size">
@@ -33,4 +35,30 @@
         </div>
         <span class="visually-hidden">Next</span>
     </button>
+</div>-->
+
+<div class="dsc-carousel card border-0" style="min-height: 60vh;">
+    <div class="dsc-carousel__btns fw-bold">
+        <!--<i (click)="onPreviousClick()" class="bi bi-arrow-left-circle-fill"></i>
+        <i (click)="onNextClick()" class="bi bi-arrow-right-circle-fill"></i>-->
+        <i (click)="onPreviousClick()" class="bi bi-chevron-left"></i>
+        <i (click)="onNextClick()" class="bi bi-chevron-right"></i>
+    </div>
+    <div class="dsc-carousel__content">
+       <ng-container *ngFor="let image of images; index as i">
+           <!--<img src="" alt="">-->
+      
+            <img [ngStyle]="{'margin-left': image.marginLeft + '%'}" style="height: 60vh;" [src]="image.imageSrc" class="card-img-top dsc-carousel__content-item  rounded-0 "
+                alt="image.imageAlt">
+           <!--<div class="dsc-carousel__content-item" style="height: 100vh;" [ngStyle]="{'background-image': 'url('+image.imageSrc+')', 'margin-left': image.marginLeft + '%'}">
+               <h1><span></span></h1>
+               <p></p>
+           </div>-->
+       </ng-container>
+    </div>
+    <div class="dsc-carousel__steps">
+        <div *ngFor="let step of images; index as i" (click)="selectImage(i)" class="dsc-carousel__steps-step dsc-carousel__steps-step-{{selectedIndex === i ? 'active' : ''}}">
+
+        </div>
+    </div>
 </div>
