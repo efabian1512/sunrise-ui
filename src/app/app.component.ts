@@ -1,6 +1,4 @@
 import { Component, ViewChild, ElementRef, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
-import { CarouselImage } from './types/carousel-image';
-
 
 @Component({
   selector: 'app-root',
@@ -9,16 +7,6 @@ import { CarouselImage } from './types/carousel-image';
 })
 export class AppComponent {
   title = 'sunrise';
-  images: CarouselImage[] = [
-    {
-      imageSrc: '../../../assets/image-3000x1500.jpg',
-      imageAlt: 'Sunrise-Banner'
-    },
-    {
-      imageSrc: '../../../assets/peticion-de-familiares-en-usa.jpg',
-      imageAlt: 'Family'
-    }
-]
 
   @ViewChild('routerOutlet') router!: ElementRef;
 

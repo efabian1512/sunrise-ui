@@ -1,7 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { AboutComponent } from '../about/about.component';
-import { ServicesComponent } from '../services/services.component';
-import { ContactsComponent } from '../contacts/contacts.component';
+import { Component } from '@angular/core';
+import { CarouselImage } from 'src/app/types/carousel-image';
 
 @Component({
   selector: 'home',
@@ -9,4 +7,15 @@ import { ContactsComponent } from '../contacts/contacts.component';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+
+  images: CarouselImage[] = [
+    {
+      imageSrc: '../../../assets/image-3000x1500.jpg',
+      imageAlt: 'Sunrise-Banner'
+    },
+    {
+      imageSrc: '../../../assets/peticion-de-familiares-en-usa.jpg',
+      imageAlt: 'Family'
+    }
+  ]
 }
