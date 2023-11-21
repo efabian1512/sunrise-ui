@@ -6,36 +6,30 @@
         </button>
         <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li routerLinkActive="active" class="nav-item me-3">
-                    <a (click)="setHomeAsActiveItem()" [ngClass]="{'active': (selectedElementName === 'home')}" class="nav-link fw-bold py-0" routerLink="/">
-                        <div class="row">
-                            <div [style.backgroundImage]="'url(../../../../assets/SmallSquareLogoJpgCropped.jpg)'"
-                                class="thumbnail me-1 col"></div>
-                            <!--<i title="Sunrise" class="bi bi-house-fill h5">-->
-                            <span class="col pt-2 ps-0">SUNRISE</span>
-                        </div> 
+                <ng-container *ngFor="let tab of tabs">
+                    <li *ngIf="tab?.isHomeTab" routerLinkActive="active" class="nav-item me-3">
+                        <a (click)="setHomeAsActiveItem()" [ngClass]="{'active': (selectedElementName === tab?.['name'])}"
+                            class="nav-link fw-bold py-0" routerLink="/">
+                            <div class="row">
+                                <div [style.backgroundImage]="'url('+tab.logoImageUrl+')'" class="thumbnail me-1 col"></div>
+                                <span class="col pt-2 ps-0">{{tab?.['title']}}</span>
+                            </div>
                         </a>
-                </li>
-                <li routerLinkActive="active" class="nav-item me-3">
-                    <a [ngClass]="{'active': (selectedElementName === 'services')}"  class="nav-link fw-bold clickable" (click)="scrollTo('services')">SERVICIOS</a>
-                </li>
-                <li routerLinkActive="active" class="nav-item me-3">
-                    <a [ngClass]="{'active': (selectedElementName === 'about')}"  class="nav-link fw-bold clickable" (click)="scrollTo('about')">
-                        SOBRE NOSOTROS
-                    </a>
-                </li>
-                <li routerLinkActive="active" class="nav-item me-3">
-                    <a [ngClass]="{'active': (selectedElementName === 'contacts')}"  class="nav-link fw-bold clickable" (click)="scrollTo('contacts')">CONTACTO</a>
-                </li>
+                    </li>
+
+                    <li *ngIf="!tab?.isHomeTab && !tab?.isLoginTab && !tab?.isSignupTab" routerLinkActive="active" class="nav-item me-3">
+                        <a [ngClass]="{'active': (selectedElementName === tab?.['name'])}" class="nav-link fw-bold clickable"
+                            (click)="scrollTo(tab?.['name'])">{{tab?.['title']}}</a>
+                    </li>
+                </ng-container>
             </ul>
         </div>
     </div>
         <ul class="collapse navbar-collapse navbar-nav justify-content-end me-auto flex-grow-0 mb-2 mb-lg-0 pe-3">
-            <li class="nav-item py-0 btn btn-light btn-sm me-3">
-                <a routerLink="/login" class="nav-link text-dark fw-bold">ACCEDER</a>
-            </li>
-            <li class="nav-item py-0 btn btn-light btn-sm">
-                <a routerLink="/login" class="nav-link text-dark fw-bold">REGISTRARSE</a>
-            </li>
+            <ng-container *ngFor="let tab of tabs">
+                <li *ngIf="tab?.isLoginTab || tab?.isSignupTab" class="nav-item py-0 btn btn-light btn-sm" [ngClass]="[tab?.isLoginTab ? tab?.['marginRightClass'] : '']">
+                    <a routerLink="/login" class="nav-link text-dark fw-bold">{{tab?.['title']}}</a>
+                </li>
+            </ng-container>
         </ul>
 </nav>
