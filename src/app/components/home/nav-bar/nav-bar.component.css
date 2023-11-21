@@ -1,3 +1,9 @@
 .clickable {
     cursor: pointer;
 }
+
+.thumbnail {
+    width: 50px;
+    height: 40px;
+    background-size: cover;
+}
